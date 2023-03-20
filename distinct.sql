@@ -1,0 +1,30 @@
+-- DISTINCT
+-- 중복된 값 제거하기
+
+SELECT 
+    DISTINCT REGIONID, PRODUCTGROUP
+FROM KOPO_PRODUCT_VOLUME;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
