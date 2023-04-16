@@ -1,30 +1,7 @@
 -- DISTINCT
--- аъ╨╧╣х ╟╙ а╕╟его╠Б
+-- ц│ц÷е÷е║д╬д▄ б╟е· ц│е б╟д╧ц┤д▌д┘ц╒
 
 SELECT 
     DISTINCT REGIONID, PRODUCTGROUP
 FROM KOPO_PRODUCT_VOLUME;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
