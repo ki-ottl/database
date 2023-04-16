@@ -3,11 +3,11 @@
 SELECT *
 FROM KOPO_PRODUCT_VOLUME;
 
-SELECT REGIONID,        -- Áö¿ª¾ÆÀÌµð
-       PRODUCTGROUP,    -- »óÇ°±º
-       YEARWEEK         -- ¿¬ÁÖÂ÷Á¤º¸
+SELECT REGIONID,        -- ì§€ì—­ì•„ì´ë””
+       PRODUCTGROUP,    -- ìƒí’ˆêµ°
+       YEARWEEK         -- ì—°ì£¼ì°¨ì •ë³´
 FROM KOPO_PRODUCT_VOLUME
-WHERE 1=1               -- ¿ëÀÌ¼ºÀ» À§ÇÑ TRUE Á¶°Ç
+WHERE 1=1               -- ìš©ì´ì„±ì„ ìœ„í•œ TRUE ì¡°ê±´
 AND PRODUCTGROUP = 'ST0002'
 AND YEARWEEK = '201502';
 
@@ -20,23 +20,23 @@ AND YEARWEEK < 201517;
 SELECT *
 FROM KOPO_PRODUCT_VOLUME
 WHERE 1=1
-OR YEARWEEK = 201514    -- OR´Â Äõ¸®¿¡¼­ °ÅÀÇ »ç¿ëÇÏÁö ¾Ê´Â´Ù.
+OR YEARWEEK = 201514    -- ORëŠ” ì¿¼ë¦¬ì—ì„œ ê±°ì˜ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.
 OR YEARWEEK = 201516 ;
 
 SELECT 5*30 AS MULTI
-FROM DUAL;              -- DUALÀº TESTÇÒ ¼ö ÀÖ´Â TABLE
+FROM DUAL;              -- DUALì€ TESTí•  ìˆ˜ ìžˆëŠ” TABLE
 
 SELECT ROUND(1.876543, 2) AS MULTI
-FROM DUAL;              -- µÑÂ° ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²ÇÑ °ªÀ» RETURN
+FROM DUAL;              -- ë‘˜ì§¸ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼í•œ ê°’ì„ RETURN
 
 SELECT POWER(5, 3) AS POW
 FROM DUAL;
 
 SELECT 'SMART' || '_' || 'TECH' AS EXPR
-FROM DUAL;              -- ||·Î ¹®ÀÚ¿­ ÇÕÄ¡±â (Åë¿ë)
+FROM DUAL;              -- ||ë¡œ ë¬¸ìžì—´ í•©ì¹˜ê¸° (í†µìš©)
 
 SELECT CONCAT('11', '22') AS EXPR
-FROM DUAL;              -- CONCATÀ¸·Î ¹®ÀÚ¿­ ÇÕÄ¡±â
+FROM DUAL;              -- CONCATìœ¼ë¡œ ë¬¸ìžì—´ í•©ì¹˜ê¸°
 
 SELECT A.*,
       (A.VOLUME * 0.7) AS CALIB_VOLUME
@@ -46,9 +46,9 @@ SELECT A.*,
     ROUND(A.VOLUME * 0.7, 0) AS CALIB_VOLUME
 FROM KOPO_PRODUCT_VOLUME A;
 
--- CEIL ¿Ã¸²
--- FLOOR ¹ö¸²
--- ROUND ¹Ý¿Ã¸²
+-- CEIL ì˜¬ë¦¼
+-- FLOOR ë²„ë¦¼
+-- ROUND ë°˜ì˜¬ë¦¼
 
 SELECT A.*,
     CEIL(2.35343287423) AS CALIB_VOLUME
@@ -64,20 +64,20 @@ FROM KOPO_PRODUCT_VOLUME A; --2
 
 SELECT A.*,
     ROUND (CEIL(2.35343287423)) AS CALIB_VOLUME
-FROM KOPO_PRODUCT_VOLUME A; -- ÀÌ·± °Íµµ °¡´ÉÇÏ´Ù
+FROM KOPO_PRODUCT_VOLUME A; -- ì´ëŸ° ê²ƒë„ ê°€ëŠ¥í•˜ë‹¤
 
 SELECT *
 FROM KOPO_PROMOTION;
 
--- KOPO_PROMOTION Å×ÀÌºí¿¡¼­ Á¶È¸¸¦ ÅëÇØ
--- MAP¿¡ 10%ÇÒÀÎµÈ °¡°ÝÀ» ROUND Ã³¸®ÇÏ¿©
--- ¡®PMAP10¡¯ÀÌ¶ó´Â ÄÃ·³À» »ý¼ºÇÏ¼¼¿ä
+-- KOPO_PROMOTION í…Œì´ë¸”ì—ì„œ ì¡°íšŒë¥¼ í†µí•´
+-- MAPì— 10%í• ì¸ëœ ê°€ê²©ì„ ROUND ì²˜ë¦¬í•˜ì—¬
+-- â€˜PMAP10â€™ì´ë¼ëŠ” ì»¬ëŸ¼ì„ ìƒì„±í•˜ì„¸ìš”
 SELECT A.*,
     ROUND (PMAP * 0.9) AS PMAP10
 FROM KOPO_PROMOTION A;
 
--- KOPO_PROMOTION Å×ÀÌºí¿¡¼­
--- PMAP/MAP_PRICE ºñÀ²À» ±¸ÇØ¼­ PERCENT ÄÃ·³À» »ý¼ºÇÏ¼¼¿ä
+-- KOPO_PROMOTION í…Œì´ë¸”ì—ì„œ
+-- PMAP/MAP_PRICE ë¹„ìœ¨ì„ êµ¬í•´ì„œ PERCENT ì»¬ëŸ¼ì„ ìƒì„±í•˜ì„¸ìš”
 SELECT A.*,
     (PMAP / MAP_PRICE)*100 AS PERCENT
 FROM KOPO_PROMOTION A;
@@ -87,22 +87,22 @@ FROM KOPO_PROMOTION A;
 
 
 -- BETWEEN A AND B
--- A¿Í B »çÀÌ¿¡ ÀÖ´Â ¹üÀ§ °ªÀ» ¸ðµÎ °Ë»ö (A, B °ª Æ÷ÇÔ)
+-- Aì™€ B ì‚¬ì´ì— ìžˆëŠ” ë²”ìœ„ ê°’ì„ ëª¨ë‘ ê²€ìƒ‰ (A, B ê°’ í¬í•¨)
 SELECT *
 FROM KOPO_PRODUCT_VOLUME
 WHERE 1=1
 AND YEARWEEK BETWEEN 201501 AND 201503;
 
 -- IN, NOT IN(A, B, C) 
--- AÀÌ°Å³ª BÀÌ°Å³ª CÀÎ Á¶°Ç
+-- Aì´ê±°ë‚˜ Bì´ê±°ë‚˜ Cì¸ ì¡°ê±´
 
--- BLUESTAR¿Í BJ_WHOLESALEÀ» Æ÷ÇÔÇÑ °á°ú¸¸!
+-- BLUESTARì™€ BJ_WHOLESALEì„ í¬í•¨í•œ ê²°ê³¼ë§Œ!
 SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE 1=1
 AND ACCOUNTNAME IN ('BLUESTAR', 'BJ_WHOLESALE');
 
--- BLUESTAR¿Í BJ_WHOLESALEÀ» Á¦¿ÜÇÑ °á°ú¸¸!
+-- BLUESTARì™€ BJ_WHOLESALEì„ ì œì™¸í•œ ê²°ê³¼ë§Œ!
 SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE 1=1
@@ -112,20 +112,20 @@ SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE 1=1
 AND ACCOUNTNAME IN ('VEDIO_ONLY', 'VIDNAUD_CENTER');
--- ACCOUNTNAMEÀÌ IN ¾È¿¡ ÀÖ´Â °æ¿ì¿¡´Â ´Ù Á¶È¸ÇÏ¶ó!
+-- ACCOUNTNAMEì´ IN ì•ˆì— ìžˆëŠ” ê²½ìš°ì—ëŠ” ë‹¤ ì¡°íšŒí•˜ë¼!
 
 SELECT *
 FROM ACCOUNT_NOT_IN;
 
--- Á¶È¸µÈ °á°ú°¡ ÄÃ·³ ÇÑ °³ÀÎ °æ¿ì¿¡´Â °ªÀ¸·Î ÀÌÇØ (,·Î ÀÌ·ç¾îÁ® ÀÖ´Ù°í »ý°¢)
+-- ì¡°íšŒëœ ê²°ê³¼ê°€ ì»¬ëŸ¼ í•œ ê°œì¸ ê²½ìš°ì—ëŠ” ê°’ìœ¼ë¡œ ì´í•´ (,ë¡œ ì´ë£¨ì–´ì ¸ ìžˆë‹¤ê³  ìƒê°)
 SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE 1=1
 AND ACCOUNTNAME IN ( SELECT ACCOUNTNAME
                      FROM ACCOUNT_NOT_IN );
 
--- °Å·¡ÇÏÁö ¾Ê´Â °Å·¡Ã³ ÀÌ¸§ (Áßº¹Á¦°Å)
--- SELECT °á°ú¸¦ ´Ù½Ã °¨½Î¸é FROM ¾ÈÀÇ ³»¿ëÀ» ÇÏ³ªÀÇ Å×ÀÌºí·Î ÀÎ½ÄÇÑ´Ù.
+-- ê±°ëž˜í•˜ì§€ ì•ŠëŠ” ê±°ëž˜ì²˜ ì´ë¦„ (ì¤‘ë³µì œê±°)
+-- SELECT ê²°ê³¼ë¥¼ ë‹¤ì‹œ ê°ì‹¸ë©´ FROM ì•ˆì˜ ë‚´ìš©ì„ í•˜ë‚˜ì˜ í…Œì´ë¸”ë¡œ ì¸ì‹í•œë‹¤.
 SELECT DISTINCT ACCOUNTNAME
 FROM (
     SELECT *
@@ -135,7 +135,7 @@ FROM (
                          FROM ACCOUNT_NOT_IN )
 );
 
--- °Å·¡ÇÏÁö ¾Ê´Â °Å·¡Ã³ ÀÌ¸§ (Áßº¹Á¦°Å X)
+-- ê±°ëž˜í•˜ì§€ ì•ŠëŠ” ê±°ëž˜ì²˜ ì´ë¦„ (ì¤‘ë³µì œê±° X)
 SELECT ACCOUNTNAME 
 FROM (
     SELECT *
@@ -145,15 +145,15 @@ FROM (
                          FROM ACCOUNT_NOT_IN )
 );
 
--- LIKE : Æ¯Á¤ ÆÐÅÏÀ» °¡Áö°í ÀÖ´Â Á¶°ÇÀ» °Ë»ö
--- B·Î ½ÃÀÛÇÏ´Â ¸ðµç °ÍÀ» Á¶È¸
+-- LIKE : íŠ¹ì • íŒ¨í„´ì„ ê°€ì§€ê³  ìžˆëŠ” ì¡°ê±´ì„ ê²€ìƒ‰
+-- Bë¡œ ì‹œìž‘í•˜ëŠ” ëª¨ë“  ê²ƒì„ ì¡°íšŒ
 SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE 1=1
 AND ACCOUNTNAME LIKE 'B%';
 
--- LIKE '%Å°¿öµå%'
--- B°¡ µé¾î°¡´Â ¸ðµç °ÍÀ» Á¶È¸ 
+-- LIKE '%í‚¤ì›Œë“œ%'
+-- Bê°€ ë“¤ì–´ê°€ëŠ” ëª¨ë“  ê²ƒì„ ì¡°íšŒ 
 SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE 1=1
@@ -169,22 +169,22 @@ FROM TABS
 WHERE 1=1
 AND TABLE_NAME LIKE '%FINAL%';
 
--- IS NULL / IS NOT NULL : NULL °ªÀ» °Ë»ö, NULLÀÌ ¾Æ´Ñ °ªÀ» °Ë»ö!
--- µ¥ÀÌÅÍ ¾çÀÌ ¸¹Àº »óÈ²¿¡¼­ ºñ¾îÀÖ´Â °ªÀ» È®ÀÎÇÏ°í ½ÍÀ» ¶§!
--- Âü°í) IS NULLÀÌ ¸ðµç °ÍÀ» °É·¯ÁÖÁø ¾Ê´Â´Ù
+-- IS NULL / IS NOT NULL : NULL ê°’ì„ ê²€ìƒ‰, NULLì´ ì•„ë‹Œ ê°’ì„ ê²€ìƒ‰!
+-- ë°ì´í„° ì–‘ì´ ë§Žì€ ìƒí™©ì—ì„œ ë¹„ì–´ìžˆëŠ” ê°’ì„ í™•ì¸í•˜ê³  ì‹¶ì„ ë•Œ!
+-- ì°¸ê³ ) IS NULLì´ ëª¨ë“  ê²ƒì„ ê±¸ëŸ¬ì£¼ì§„ ì•ŠëŠ”ë‹¤
 SELECT *
 FROM NULL_CHECK
 WHERE 1=1
 AND B IS NULL;
 
 
---KOPO_PRODUCT_VOLUME Å×ÀÌºí¿¡¼­? ¿¬»êÀÚ¸¦ È°¿ëÇÏ¿©?
---¡®ST0001¡¯ÀÇ 201544~201548 ÁÖÂ÷ ½ÇÀû¸¸ Á¶È¸ÇÏ¼¼¿ä?
--- ST0001 ÀÌ ¾ø´Ù! ST0002¸¸ ÀÖ´Â »óÈ²
+--KOPO_PRODUCT_VOLUME í…Œì´ë¸”ì—ì„œ? ì—°ì‚°ìžë¥¼ í™œìš©í•˜ì—¬?
+--â€˜ST0001â€™ì˜ 201544~201548 ì£¼ì°¨ ì‹¤ì ë§Œ ì¡°íšŒí•˜ì„¸ìš”?
+-- ST0001 ì´ ì—†ë‹¤! ST0002ë§Œ ìžˆëŠ” ìƒí™©
 SELECT DISTINCT PRODUCTGROUP
 FROM KOPO_PRODUCT_VOLUME;
 
--- cf) SELECT ÇÑ °á°ú·Î Å×ÀÌºí »ý¼ºÇØ¼­ µ¥ÀÌÅÍ¸¦ ºÎÇ®¸± ¼ö ÀÖ´Ù.
+-- cf) SELECT í•œ ê²°ê³¼ë¡œ í…Œì´ë¸” ìƒì„±í•´ì„œ ë°ì´í„°ë¥¼ ë¶€í’€ë¦´ ìˆ˜ ìžˆë‹¤.
 CREATE TABLE KOPO_PRODUCT_VOLUME AS
     SELECT REGIONID,
        'ST0001' AS PRODUCTGROUP,
@@ -195,7 +195,7 @@ CREATE TABLE KOPO_PRODUCT_VOLUME AS
     SELECT *
     FROM KOPO_PRODUCT_VOLUME;
 
--- cf) SELECTÇÑ °á°ú¸¦ INSERTÇØ¼­ µ¥ÀÌÅÍ¸¦ ºÎÇ®¸± ¼ö ÀÖ´Ù.
+-- cf) SELECTí•œ ê²°ê³¼ë¥¼ INSERTí•´ì„œ ë°ì´í„°ë¥¼ ë¶€í’€ë¦´ ìˆ˜ ìžˆë‹¤.
 INSERT INTO KOPO_PRODUCT_VOLUME
     SELECT REGIONID,
         'ST0003' AS PRODUCTGROUP,
@@ -204,11 +204,11 @@ INSERT INTO KOPO_PRODUCT_VOLUME
     FROM KOPO_PRODUCT_VOLUME;
 
 
--- FROM ÀýÀÇ ¼­ºêÄõ¸®
--- Á¶È¸ÇÑ °á°ú¸¦ °¡Áö°í ÁøÇàÇÒ ¼ö ÀÖ´Ù´Â Á¡!
+-- FROM ì ˆì˜ ì„œë¸Œì¿¼ë¦¬
+-- ì¡°íšŒí•œ ê²°ê³¼ë¥¼ ê°€ì§€ê³  ì§„í–‰í•  ìˆ˜ ìžˆë‹¤ëŠ” ì !
 
---KOPO_PRODUCT_VOLUME Å×ÀÌºí¿¡¼­? ¿¬»êÀÚ¸¦ È°¿ëÇÏ¿©?
---¡®ST0001¡¯ÀÇ 201544~201548 ÁÖÂ÷ ½ÇÀû¸¸ Á¶È¸ÇÏ¼¼¿ä?
+--KOPO_PRODUCT_VOLUME í…Œì´ë¸”ì—ì„œ? ì—°ì‚°ìžë¥¼ í™œìš©í•˜ì—¬?
+--â€˜ST0001â€™ì˜ 201544~201548 ì£¼ì°¨ ì‹¤ì ë§Œ ì¡°íšŒí•˜ì„¸ìš”?
 SELECT *
 FROM KOPO_PRODUCT_VOLUME
 WHERE 1=1 
@@ -222,8 +222,8 @@ AND PRODUCTGROUP IN 'ST0001'
 AND YEARWEEK BETWEEN 201544 AND 201548;
 
 
--- HOLIDAY_NAMEÀÌ BFÀÎ YEARWEEK Áß¿¡¼­
--- ¡®ST0001¡¯ÀÇ 201544~201548 ÁÖÂ÷ ½ÇÀû¸¸ Á¶È¸ÇÏ¼¼¿ä?
+-- HOLIDAY_NAMEì´ BFì¸ YEARWEEK ì¤‘ì—ì„œ
+-- â€˜ST0001â€™ì˜ 201544~201548 ì£¼ì°¨ ì‹¤ì ë§Œ ì¡°íšŒí•˜ì„¸ìš”?
 
 SELECT YEARWEEK2
 FROM HOLIDAY_TABLE
@@ -239,33 +239,3 @@ AND YEARWEEK IN ( SELECT YEARWEEK2
                   WHERE 1=1
                   AND HOLIDAY_NAME = 'BF' ) ;
                   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
