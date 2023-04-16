@@ -1,10 +1,10 @@
 -- UNION
--- Áßº¹À» Á¦°ÅÇØ¼­ Á¶È¸ÇØÁØ´Ù
---À§ ¾Æ·¡·Î ºÙ¿©¹ö¸°´Ù
---¿É¼ÇÀÌ µÎ °³ ÀÖ´Ù´Â Á¤µµ ±â¾ï (Áßº¹ Á¦°ÅÇØ¼­ Á¶È¸, Á¦°Å ¾ÈÇØ¼­ Á¶È¸ÇÏ´Â ÄÉÀÌ½º)
---ÄÃ·³ °¹¼ö°¡ °°¾Æ¾ß ÇÑ´Ù
+-- ì¤‘ë³µì„ ì œê±°í•´ì„œ ì¡°íšŒí•´ì¤€ë‹¤
+--ìœ„ ì•„ëž˜ë¡œ ë¶™ì—¬ë²„ë¦°ë‹¤
+--ì˜µì…˜ì´ ë‘ ê°œ ìžˆë‹¤ëŠ” ì •ë„ ê¸°ì–µ (ì¤‘ë³µ ì œê±°í•´ì„œ ì¡°íšŒ, ì œê±° ì•ˆí•´ì„œ ì¡°íšŒí•˜ëŠ” ì¼€ì´ìŠ¤)
+--ì»¬ëŸ¼ ê°¯ìˆ˜ê°€ ê°™ì•„ì•¼ í•œë‹¤
 
--- UNION : Áßº¹À» Á¦°ÅÇØ¼­ Á¶È¸ (½Ã°£ÀÌ ´õ ¿À·¡°É¸°´Ù)
+-- UNION : ì¤‘ë³µì„ ì œê±°í•´ì„œ ì¡°íšŒ (ì‹œê°„ì´ ë” ì˜¤ëž˜ê±¸ë¦°ë‹¤)
 SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE PRODUCTGROUP = 'MOBILE'
@@ -13,7 +13,7 @@ SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE PRODUCTGROUP = 'WM';
 
--- UNION ALL : ¸ðµÎ Á¶È¸ (¼Óµµ°¡ ºü¸£´Ù)
+-- UNION ALL : ëª¨ë‘ ì¡°íšŒ (ì†ë„ê°€ ë¹ ë¥´ë‹¤)
 SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE PRODUCTGROUP = 'MOBILE'
@@ -21,30 +21,3 @@ UNION ALL
 SELECT *
 FROM KOPO_CHANNEL_RESULT
 WHERE PRODUCTGROUP = 'WM';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

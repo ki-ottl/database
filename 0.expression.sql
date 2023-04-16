@@ -1,8 +1,7 @@
 -- Expression 
--- EXPRESSION µ¥ÀÌÅÍ Á¶È¸ÇÒ ¶§ ±âÁ¸°ª ¿Ü¿¡ Ãß°¡·Î ÄÃ·³À» »ý¼ºÇÒ ¼ö ÀÖ´Ù.
--- Å×ÀÌºí¿¡ º°Äª, ÄÃ·³¸í¿¡ º°ÄªÀ» ÁÙ ¼ö ÀÖ´Ù (AS)
--- ex. ÀÚÁÖ »ç¿ëÇÏ´Â ½Äº°ÄÚµå, Å¸ÀÓÇÃ·¡±× Æû
--- 
+-- EXPRESSION ë°ì´í„° ì¡°íšŒí•  ë•Œ ê¸°ì¡´ê°’ ì™¸ì— ì¶”ê°€ë¡œ ì»¬ëŸ¼ì„ ìƒì„±í•  ìˆ˜ ìžˆë‹¤.
+-- í…Œì´ë¸”ì— ë³„ì¹­, ì»¬ëŸ¼ëª…ì— ë³„ì¹­ì„ ì¤„ ìˆ˜ ìžˆë‹¤ (AS)
+-- ex. ìžì£¼ ì‚¬ìš©í•˜ëŠ” ì‹ë³„ì½”ë“œ, íƒ€ìž„í”Œëž˜ê·¸ í¼
 
 SELECT A.*,
     CONCAT('ABC','_') AS NEWCOL,
@@ -16,8 +15,8 @@ SELECT A.*,
     'HK_BANK' AS BANKNAME
 FROM CUSTOMERDATA A;
 
--- ½Ç¹«¿¡¼­ ¸¹ÀÌ »ç¿ë
--- ¿À¶óÅ¬ Á¦°ø CONCAT ÇÔ¼ö´Â ±âº»ÀûÀ¸·Î 2°³¸¸ °¡´É
+-- ì‹¤ë¬´ì—ì„œ ë§Žì´ ì‚¬ìš©
+-- ì˜¤ë¼í´ ì œê³µ CONCAT í•¨ìˆ˜ëŠ” ê¸°ë³¸ì ìœ¼ë¡œ 2ê°œë§Œ ê°€ëŠ¥
 SELECT A.*,
     A.CUSTID||'_'||A.CUSTTYPE AS NEWCOL2,
     CONCAT(A.CUSTID,CONCAT('_',A.CUSTTYPE)) AS NEWCOL,
@@ -35,8 +34,8 @@ SELECT A.*,
     'HK_BANK' AS BANKNAME
 FROM CUSTOMERDATA A;
 
--- 'PREDICT_MODEL'ÀÇ ÄÃ·³ÀÌ¸§À» MEASUREID·Î Áö¾îÁÙ ¼ö ÀÖ´Ù
--- 'PREDICT_MODEL'À» °¡Àå Ã¹ ÄÃ·³¿¡¼­ º¸°í ½ÍÀ» ¶§
+-- 'PREDICT_MODEL'ì˜ ì»¬ëŸ¼ì´ë¦„ì„ MEASUREIDë¡œ ì§€ì–´ì¤„ ìˆ˜ ìžˆë‹¤
+-- 'PREDICT_MODEL'ì„ ê°€ìž¥ ì²« ì»¬ëŸ¼ì—ì„œ ë³´ê³  ì‹¶ì„ ë•Œ
 SELECT     
     'PREDICT_MODEL' AS MEASUREID,
     A.*,
@@ -48,33 +47,9 @@ SELECT
     'HK_BANK' AS BANKNAME
 FROM CUSTOMERDATA A;
 
--- ³»°¡ ¸¸µç ÄÃ·³À» ¸ÕÀú ³ª¿À°Ô²û ÇÏ°í,
+-- ë‚´ê°€ ë§Œë“  ì»¬ëŸ¼ì„ ë¨¼ì € ë‚˜ì˜¤ê²Œë” í•˜ê³ ,
 SELECT 'PREDICT_MODEL' AS MEASUREID, 
-    A.*,  -- A Å×ÀÌºíÀÇ ¸ðµç ÄÃ·³
-    SYSDATE AS TIMEFLAG -- Å¸ÀÓÇÃ·¡±×
+    A.*,  -- A í…Œì´ë¸”ì˜ ëª¨ë“  ì»¬ëŸ¼
+    SYSDATE AS TIMEFLAG -- íƒ€ìž„í”Œëž˜ê·¸
 FROM CUSTOMERDATA A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

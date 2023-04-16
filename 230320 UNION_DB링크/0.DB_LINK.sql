@@ -1,9 +1,9 @@
 -- DB LINK 
--- °³¹ßDB¿¡ ÀÖ´Â Çü»óÀ» ¿î¿µDB·Î ÀÌ°üÇÏ´Â ÀÏ!
--- DB LINK´Â DB °¡Á®¿À°í ½ÍÀº °÷¿¡¼­ »ý¼º!
--- DB LINK¸¦ °É¾îµÎ¸é ¼¿·ºÆ® Äõ¸® ÇÏ³ª·Î Å¸ PCÀÇ µ¥ÀÌÅÍ¸¦ ¶¯°Ü¿Ã ¼ö ÀÖ´Ù
+-- ê°œë°œDBì— ìžˆëŠ” í˜•ìƒì„ ìš´ì˜DBë¡œ ì´ê´€í•˜ëŠ” ì¼!
+-- DB LINKëŠ” DB ê°€ì ¸ì˜¤ê³  ì‹¶ì€ ê³³ì—ì„œ ìƒì„±!
+-- DB LINKë¥¼ ê±¸ì–´ë‘ë©´ ì…€ë ‰íŠ¸ ì¿¼ë¦¬ í•˜ë‚˜ë¡œ íƒ€ PCì˜ ë°ì´í„°ë¥¼ ë•¡ê²¨ì˜¬ ìˆ˜ ìžˆë‹¤
 
--- ÇÐ±³ ¼­¹öÀÇ Å×ÀÌºíÀ» ²ø¾î¿Í¼­ ¾²±â 
+-- í•™êµ ì„œë²„ì˜ í…Œì´ë¸”ì„ ëŒì–´ì™€ì„œ ì“°ê¸° 
 CREATE DATABASE LINK KOPOSERVER2
 CONNECT TO kopo
 IDENTIFIED BY kopo
@@ -15,57 +15,28 @@ Using '(DESCRIPTION =
     )
   )';
 
---DB LINK È®ÀÎ
+--DB LINK í™•ì¸
 SELECT * 
 FROM ALL_DB_LINKS;
 
--- ¿ø°ÝÁöÀÇ DB ¼­¹öÀÇ ¸ðµç Å×ÀÌºíÀ» Á¶È¸
+-- ì›ê²©ì§€ì˜ DB ì„œë²„ì˜ ëª¨ë“  í…Œì´ë¸”ì„ ì¡°íšŒ
 SELECT *
 FROM TABS@KOPOSERVER2;
 
--- ¿ø°ÝÁöÀÇ DB ¼­¹öÀÇ Æ¯Á¤ Å×ÀÌºíÀ» Á¶È¸
+-- ì›ê²©ì§€ì˜ DB ì„œë²„ì˜ íŠ¹ì • í…Œì´ë¸”ì„ ì¡°íšŒ
 SELECT *
 FROM PRO_PROMOTION@KOPOSERVER2;
 
--- ¿ø°ÝÁöÀÇ DB ¼­¹ö¿¡ ÀÖ´Â Å×ÀÌºíÀ» ³» °ø°£¿¡ »ý¼º
+-- ì›ê²©ì§€ì˜ DB ì„œë²„ì— ìžˆëŠ” í…Œì´ë¸”ì„ ë‚´ ê³µê°„ì— ìƒì„±
 CREATE TABLE PRO_PROMOTION
 AS
 SELECT *
 FROM PRO_PROMOTION@KOPOSERVER2;
 
--- ³» °ø°£¿¡ KOPOSERVER2ÀÇ PRO_PROMOTION Å×ÀÌºí È®ÀÎ
+-- ë‚´ ê³µê°„ì— KOPOSERVER2ì˜ PRO_PROMOTION í…Œì´ë¸” í™•ì¸
 SELECT *
 FROM TABS;
 
--- DB LINK Á¦°Å
+-- DB LINK ì œê±°
 DROP TABLE PRO_PROMOTION
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
