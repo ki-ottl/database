@@ -13,4 +13,4 @@ INSERT INTO KOPO_PARAM_HANJIWON
 VALUES ('DEST_TABLE', 'kopo_bankdata_hanjiwon'); 
 
 INSERT INTO KOPO_PARAM_HANJIWON
-VALUES ('DEST_CON', 'oracle+cx_oracle://kopo:kopo@192.168.110.112:1521/orcl'); 
+VALUES ('DEST_CON', 'oracle+cx_oracle://kopo:kopo@192.168.110.112:1521/orcl');
